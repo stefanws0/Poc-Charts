@@ -1,0 +1,23 @@
+﻿<Window x:Class="Charts.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:chart="clr-namespace:De.TorstenMandelkow.MetroChart;assembly=De.TorstenMandelkow.MetroChart"
+        Title="MainWindow" Height="547.612" Width="525"
+        DataContext="{Binding Test, Source={StaticResource Locator}}">
+    <Grid>
+        <chart:PieChart
+        Style="{StaticResource MinimalChartStyle}"
+        ChartTitle="Volle Parkeerplaatsen"
+        ChartSubTitle="Aangegeven in aantal"
+        Palette="{StaticResource CustomColors}"
+        SelectedItem="{Binding Path=SelectedItem, Mode=TwoWay}" >
+            <chart:PieChart.Series>
+                <chart:ChartSeries
+                SeriesTitle="Errors"
+                DisplayMember="Category"
+                ValueMember="Number"
+                ItemsSource="{Binding Path=Errors}" />
+            </chart:PieChart.Series>
+        </chart:PieChart>
+    </Grid>
+</Window>

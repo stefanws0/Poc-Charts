@@ -1,0 +1,29 @@
+<Application x:Class="Charts.App" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" StartupUri="MainWindow.xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" d1p1:Ignorable="d" xmlns:d1p1="http://schemas.openxmlformats.org/markup-compatibility/2006">
+  <Application.Resources>
+        <ResourceDictionary>
+            <Style x:Key="MinimalChartStyle" TargetType="chart:ChartBase" xmlns:chart="clr-namespace:De.TorstenMandelkow.MetroChart;assembly=De.TorstenMandelkow.MetroChart">
+                <Setter Property="Width" Value="500"/>
+                <Setter Property="Height" Value="500"/>
+            </Style>
+            <chart:ResourceDictionaryCollection x:Key="CustomColors" xmlns:chart="clr-namespace:De.TorstenMandelkow.MetroChart;assembly=De.TorstenMandelkow.MetroChart">
+                <ResourceDictionary>
+                    <SolidColorBrush x:Key="Brush1" Color="#DAF7A6" />
+                </ResourceDictionary>
+                <ResourceDictionary>
+                    <SolidColorBrush x:Key="Brush2" Color="#FFC300" />
+                </ResourceDictionary>
+                <ResourceDictionary>
+                    <SolidColorBrush x:Key="Brush3" Color="#FF5733" />
+                </ResourceDictionary>
+                <ResourceDictionary>
+                    <SolidColorBrush x:Key="Brush4" Color="#C70039" />
+                </ResourceDictionary> 
+                <ResourceDictionary>
+                    <SolidColorBrush x:Key="Brush5" Color="#900C3F" />
+                </ResourceDictionary>
+                <!-- add more values with a different key -->
+            </chart:ResourceDictionaryCollection>
+            <vm:ViewModelLocator x:Key="Locator" d:IsDataSource="True" xmlns:vm="clr-namespace:Charts.ViewModel" />
+    </ResourceDictionary>
+  </Application.Resources>
+</Application>
